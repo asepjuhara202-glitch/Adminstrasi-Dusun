@@ -17,11 +17,14 @@ export function LoginModal({ currentUser, onLogin, onLogout }: LoginModalProps) 
 
   // Expanded precise presets with user-defined credentials
   const presetUsers = [
-    { id: 'admin', username: 'admin', password: 'adminpassword', nama: 'Ibu Kades Rahma', role: 'Admin' as const, desc: 'Kepala Dusun (Akses Penuh Seluruh Wilayah)' },
-    { id: 'rw1', username: 'rw01', password: 'rw01password', nama: 'Bapak Asep Juhara (RW 01)', role: 'User' as const, rwId: 'RW 01', desc: 'Ketua RW 01' },
-    { id: 'rw2', username: 'rw02', password: 'rw02password', nama: 'Bapak Agus Setiawan (RW 02)', role: 'User' as const, rwId: 'RW 02', desc: 'Ketua RW 02' },
-    { id: 'rw3', username: 'rw03', password: 'rw03password', nama: 'Bapak Dedi Kurniawan (RW 03)', role: 'User' as const, rwId: 'RW 03', desc: 'Ketua RW 03' },
-    { id: 'rw4', username: 'rw04', password: 'rw04password', nama: 'Bapak Eko Prasetyo (RW 04)', role: 'User' as const, rwId: 'RW 04', desc: 'Ketua RW 04' }
+    { id: 'admin', username: 'admin', password: 'adminpassword', nama: 'Pak Asep Juhara', role: 'Admin' as const, desc: 'Kepala Dusun (Akses Penuh Seluruh Wilayah)' },
+    { id: 'rw07', username: 'rw07', password: 'rw07m', nama: 'Pak Miftah (RW 07)', role: 'User' as const, rwId: 'RW 07', desc: 'Ketua RW 07' },
+    { id: 'rw08', username: 'rw08', password: 'rw08d', nama: 'Pak Darmatin (RW 08)', role: 'User' as const, rwId: 'RW 08', desc: 'Ketua RW 08' },
+    { id: 'rw09', username: 'rw09', password: 'rw09s', nama: 'Pak Sulam (RW 09)', role: 'User' as const, rwId: 'RW 09', desc: 'Ketua RW 09' },
+    { id: 'rw13', username: 'rw13', password: 'rw13a', nama: 'Pak Ajang (RW 13)', role: 'User' as const, rwId: 'RW 13', desc: 'Ketua RW 13' }
+    { id: 'rw15', username: 'rw15', password: 'rw15f', nama: 'Pak Fuad (RW 15)', role: 'User' as const, rwId: 'RW 15', desc: 'Ketua RW 15' }
+    { id: 'rw16', username: 'rw16', password: 'rw16e', nama: 'Pak Endang (RW 16)', role: 'User' as const, rwId: 'RW 16', desc: 'Ketua RW 16' }
+    { id: 'rw17', username: 'rw17', password: 'rw17j', nama: 'Pak Jajang (RW 17)', role: 'User' as const, rwId: 'RW 17', desc: 'Ketua RW 17' }
   ];
 
   const handleFormLogin = (e: React.FormEvent) => {
