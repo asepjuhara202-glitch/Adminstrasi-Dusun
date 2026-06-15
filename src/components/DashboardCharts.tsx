@@ -154,7 +154,7 @@ export function DashboardCharts({ wargaList, rwList, mutasiList, currentUser }: 
       ];
 
       const rwName = selectedRw === 'all' ? 'SEMUA_RW' : `RW_${selectedRw}`;
-      XLSX.writeFile(wb, `LAPORAN_LAMPID_SUKAMAJU_${rwName}_${new Date().toISOString().split('T')[0]}.xlsx`);
+      XLSX.writeFile(wb, `LAPORAN_LAMPID_DUSUN III_${rwName}_${new Date().toISOString().split('T')[0]}.xlsx`);
     } catch (e) {
       console.error('Gagal mengekspor data Excel LAMPID:', e);
       alert('Terjadi kesalahan saat mengekspor laporan kependudukan LAMPID!');
@@ -178,12 +178,12 @@ export function DashboardCharts({ wargaList, rwList, mutasiList, currentUser }: 
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(16);
       doc.setTextColor(30, 41, 59); // Slate-800
-      doc.text('PEMERINTAH DESA/DUSUN SUKAMAJU', 15, 22);
+      doc.text('PEMERINTAH DESA SUCI/DUSUN III', 15, 22);
 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(10);
       doc.setTextColor(100, 116, 139); // Slate-500
-      doc.text('Kecamatan Mandiri, Kabupaten Indonesia Jaya • Telepon/WA: 0812-3456-7890', 15, 27);
+      doc.text('Kecamatan Karangpawitan, Kabupaten Garut • Telepon/WA: 0812-3456-7890', 15, 27);
       doc.text('Layanan Administrasi Kependudukan Terintegrasi (LAMPID)', 15, 32);
 
       // Divider Line
@@ -351,7 +351,7 @@ export function DashboardCharts({ wargaList, rwList, mutasiList, currentUser }: 
       }
 
       const rName = selectedRw === 'all' ? 'SEMUA_RW' : `RW_${selectedRw}`;
-      doc.save(`LAPORAN_LAMPID_SUKAMAJU_${rName}_${new Date().toISOString().split('T')[0]}.pdf`);
+      doc.save(`LAPORAN_LAMPID_DUSUN III_${rName}_${new Date().toISOString().split('T')[0]}.pdf`);
     } catch (e) {
       console.error('Gagal mengekspor data PDF LAMPID:', e);
       alert('Terjadi kesalahan saat mengekspor laporan kependudukan LAMPID ke PDF!');
