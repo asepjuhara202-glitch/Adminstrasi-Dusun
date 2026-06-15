@@ -4,9 +4,9 @@ export const INITIAL_RWS: RW[] = [
   { id: 'RW 07', namaKetua: 'Miftah', wilayah: 'Dusun III', kontak: '0812-3456-7890' },
   { id: 'RW 08', namaKetua: 'Darmatin', wilayah: 'Dusun III', kontak: '0821-4567-9012' },
   { id: 'RW 09', namaKetua: 'Sulam', wilayah: 'Dusun III', kontak: '0838-5678-2345' },
-  { id: 'RW 13', namaKetua: 'Ajang', wilayah: 'Dusun III', kontak: '0857-6789-3456' }
-  { id: 'RW 15', namaKetua: 'Fuad', wilayah: 'Dusun III', kontak: '0857-6789-3456' }
-  { id: 'RW 16', namaKetua: 'Endang', wilayah: 'Dusun III', kontak: '0857-6789-3456' }
+  { id: 'RW 13', namaKetua: 'Ajang', wilayah: 'Dusun III', kontak: '0857-6789-3456' },
+  { id: 'RW 15', namaKetua: 'Fuad', wilayah: 'Dusun III', kontak: '0857-6789-3456' },
+  { id: 'RW 16', namaKetua: 'Endang', wilayah: 'Dusun III', kontak: '0857-6789-3456' },
   { id: 'RW 17', namaKetua: 'Jajang', wilayah: 'Dusun III', kontak: '0857-6789-3456' }
 ];
 
