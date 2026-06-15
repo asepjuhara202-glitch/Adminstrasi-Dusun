@@ -1,6 +1,6 @@
 {
   "name": "Administrasi Dusun",
-  "description": "Aplikasi administrasi kependudukan, iuran keuangan RW, pengajuan bansos, dan pelaporan kegiatan warga Dusun III.",
+  "description": "Aplikasi administrasi kependudukan, iuran keuangan RW, pengajuan bansos, dan pelaporan kegiatan warga Dusun .",
   "requestFramePermissions": [
     "camera",
     "geolocation"
