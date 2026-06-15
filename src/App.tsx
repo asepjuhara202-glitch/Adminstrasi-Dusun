@@ -80,8 +80,8 @@ export default function App() {
               <Home className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-base font-black text-slate-900 dark:text-slate-100 tracking-tight leading-none">Sukamaju Mandiri</h1>
-              <p className="text-xxs text-slate-450 dark:text-slate-400 mt-1 font-bold">Portal Administrasi Dusun & RW</p>
+              <h1 className="text-base font-black text-slate-900 dark:text-slate-100 tracking-tight leading-none">Dusun III Ds. Suci</h1>
+              <p className="text-xxs text-slate-450 dark:text-slate-400 mt-1 font-bold">Administrasi Dusun & RW</p>
             </div>
           </div>
 
@@ -257,8 +257,8 @@ export default function App() {
                   <span className="inline-flex gap-1.5 items-center bg-indigo-600 py-1 px-3 rounded-full text-xxs font-extrabold uppercase tracking-wide">
                     <Sparkles className="w-3.5 h-3.5" /> Administrasi Pintar
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">Sugeng Rawuh, Selamat Datang di Sukamaju Mandiri</h2>
-                  <p className="text-xs sm:text-sm text-indigo-150 leading-relaxed font-semibold">Portal pintar terpadu warga Dusun Sukamaju - Kelola data demografi kependudukan, pengumpulan kas iuran RW, proposal rutilahu/bansos, dan agenda ronda siskamling secara instan.</p>
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">Selamat Datang di Dusun III Desa Suci</h2>
+                  <p className="text-xs sm:text-sm text-indigo-150 leading-relaxed font-semibold">Portal pintar terpadu warga Dusun III - Kelola data demografi kependudukan, pengumpulan kas iuran RW, proposal rutilahu/bansos, dan agenda ronda siskamling secara instan.</p>
                   
                   <div className="pt-2">
                     <button 
@@ -277,7 +277,7 @@ export default function App() {
                 {/* Pending Bansos */}
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 flex flex-col justify-between shadow-xxs">
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Kasun Bansos Pending</h3>
+                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2"> Bansos Pending</h3>
                     <span className="text-4xl font-extrabold text-slate-800">{pendingBansosCount}</span>
                   </div>
                   <p className="text-xxs text-slate-500 mt-4 font-semibold">Proposal proposal bansos terekam masuk menunggu persetujuan anda.</p>
@@ -298,7 +298,7 @@ export default function App() {
                     <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Wilayah Terdata</h3>
                     <span className="text-4xl font-extrabold text-slate-800">{store.rwList.length}</span>
                   </div>
-                  <p className="text-xxs text-slate-500 mt-4 font-semibold">Rukun Warga aktif dalam kepengurusan Dusun Sukamaju.</p>
+                  <p className="text-xxs text-slate-500 mt-4 font-semibold">Rukun Warga aktif dalam kepengurusan Dusun III.</p>
                 </div>
               </div>
 
@@ -455,7 +455,7 @@ export default function App() {
 
       {/* Elegant footer */}
       <footer className="bg-slate-900 border-t border-slate-800 text-slate-500 py-6 text-xs text-center mt-12 bg-cover bg-center">
-        <p className="font-bold text-slate-400">© 2026 Dusun Sukamaju Mandiri - Dukung Kependudukan & PWA Offline-First</p>
+        <p className="font-bold text-slate-400">© 2026 Dusun III Desa Suci - Dukung Kependudukan & PWA Offline-First</p>
         <p className="text-slate-650 mt-1.5 font-medium">Bekerjasama dengan Otoritas RT/RW Setempat Melalui Firebase Cloud Engine</p>
       </footer>
     </div>
