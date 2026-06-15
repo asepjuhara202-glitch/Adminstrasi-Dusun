@@ -498,7 +498,7 @@ export function WargaTab({
       }));
       ws['!cols'] = colWidths;
 
-      XLSX.writeFile(wb, `DATA_PENDUDUK_SUKAMAJU_${new Date().toISOString().split('T')[0]}.xlsx`);
+      XLSX.writeFile(wb, `DATA_PENDUDUK_DUSUN III_${new Date().toISOString().split('T')[0]}.xlsx`);
     } catch (e) {
       console.error('Gagal mengekspor file Excel:', e);
       alert('Terjadi kesalahan saat mengekspor data kependudukan!');
@@ -561,7 +561,7 @@ export function WargaTab({
           if (!isAdmin && userRwId) {
             rwId = userRwId;
           } else {
-            const tempRw = row['RW'] || row['rwId'] || row['RW Sektor'] || row['rw'] || 'RW 01';
+            const tempRw = row['RW'] || row['rwId'] || row['RW Sektor'] || row['rw'] || 'RW 07';
             if (typeof tempRw === 'number' || !isNaN(Number(tempRw))) {
               rwId = `RW ${String(tempRw).padStart(2, '0')}`;
             } else {
