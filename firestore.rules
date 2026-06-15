@@ -1,0 +1,166 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Reusable, hardened helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Helper to extract nested role
+    function getUserRole(uid) {
+      return get(/databases/$(database)/documents/users/$(uid)).data.role;
+    }
+
+    function getUserRwId(uid) {
+      return get(/databases/$(database)/documents/users/$(uid)).data.rwId;
+    }
+
+    // 1. Users collection rules
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        request.auth.uid == userId || 
+        getUserRole(request.auth.uid) == 'Admin'
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 2. Warga collection rules
+    match /warga/{wargaId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' || 
+        getUserRwId(request.auth.uid) == incoming().rwId
+      );
+      allow delete: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' || 
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+    }
+
+    // 3. RWs collection rules
+    match /rws/{rwId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 4. Iuran collection rules
+    match /iuran/{iuranId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) != null
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 5. Transaksi collection rules
+    match /transaksi/{transaksiId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) != null
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 6. Pengajuan collection rules
+    match /pengajuan/{pengajuanId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == incoming().rwId ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 7. Laporan collection rules
+    match /laporan/{laporanId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == incoming().rwId ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 8. Mutasi collection rules
+    match /mutasi/{mutasiId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) != null
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 9. Ronda collection rules
+    match /ronda/{rondaId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == incoming().rwId ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 10. Kegiatan collection rules
+    match /kegiatan/{kegiatanId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == incoming().rwId ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+      allow delete: if isSignedIn() && getUserRole(request.auth.uid) == 'Admin';
+    }
+
+    // 12. Penerima Bantuan collection rules
+    match /penerimabantuan/{id} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == incoming().rwId ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+      allow delete: if isSignedIn() && (
+        getUserRole(request.auth.uid) == 'Admin' ||
+        getUserRwId(request.auth.uid) == existing().rwId
+      );
+    }
+
+    // 13. Gallery collection rules
+    match /gallery/{id} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    // 11. Test connection rules
+    match /test/{docId} {
+      allow read: if true;
+    }
+  }
+}

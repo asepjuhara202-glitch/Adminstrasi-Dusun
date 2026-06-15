@@ -1,0 +1,9 @@
+{
+  "name": "Administrasi Dusun",
+  "description": "Aplikasi administrasi kependudukan, iuran keuangan RW, pengajuan bansos, dan pelaporan kegiatan warga Dusun Sukamaju.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

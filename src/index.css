@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Global Dark Mode Helper Overrides */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0f172a !important; /* slate-950 */
+  color: #f8fafc !important; /* slate-50 */
+}
+
+/* Base Overrides for Dark Mode */
+.dark .bg-white {
+  background-color: #1e293b !important; /* slate-800 */
+}
+.dark .bg-slate-50 {
+  background-color: #0f172a !important; /* slate-950 */
+}
+.dark .bg-slate-100 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+.dark .bg-slate-150 {
+  background-color: #334155 !important; /* slate-700 */
+}
+.dark .bg-slate-200 {
+  background-color: #334155 !important; /* slate-700 */
+}
+
+/* Hover background states */
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-slate-150:hover,
+.dark .hover\:bg-slate-200:hover,
+.dark .hover\:bg-slate-100\/80:hover {
+  background-color: #334155 !important; /* slate-700 */
+}
+
+/* Border overrides */
+.dark .border-slate-50,
+.dark .border-slate-100,
+.dark .border-slate-150,
+.dark .border-slate-200,
+.dark .border-slate-200\/50,
+.dark .border-slate-200\/60,
+.dark .border-slate-300 {
+  border-color: #334155 !important; /* slate-700 */
+}
+
+/* Text color overrides */
+.dark .text-slate-900,
+.dark .text-slate-850,
+.dark .text-slate-800 {
+  color: #f8fafc !important; /* slate-50 */
+}
+.dark .text-slate-700,
+.dark .text-slate-650,
+.dark .text-slate-600 {
+  color: #cbd5e1 !important; /* slate-300 */
+}
+.dark .text-slate-550,
+.dark .text-slate-500,
+.dark .text-slate-450,
+.dark .text-slate-400 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+/* Specific component overrides */
+/* Tables */
+.dark table th {
+  background-color: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
+}
+
+.dark table td {
+  border-color: #334155 !important;
+}
+
+/* Input Fields, Select, and Textareas */
+.dark input, 
+.dark select, 
+.dark textarea {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+  outline-color: #4f46e5 !important;
+}
+
+.dark input::placeholder, 
+.dark select::placeholder, 
+.dark textarea::placeholder {
+  color: #64748b !important; /* slate-500 */
+}
+
+/* Side navigation, modalkas, card headings */
+.dark .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  color: #c7d2fe !important; /* indigo-200 */
+}
+.dark .text-indigo-700, .dark .text-indigo-650 {
+  color: #818cf8 !important; /* indigo-400 */
+}
+
+/* Modal and dialog specific cards */
+.dark .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Active tab text overrides */
+.dark .text-indigo-805, .dark .text-indigo-705 {
+  color: #a5b4fc !important;
+}
+
+/* Soft badges and alert blocks */
+.dark .bg-slate-50\/40, .dark .bg-slate-50\/50, .dark .bg-slate-50\/80 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* Excel and File input styles */
+.dark .text-emerald-700, .dark .text-emerald-650 {
+  color: #34d399 !important; /* emerald-400 */
+}
+.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #a7f3d0 !important;
+}
+.dark .text-amber-700, .dark .text-amber-650, .dark .text-amber-800 {
+  color: #fbbf24 !important; /* amber-400 */
+}
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #fde68a !important;
+}
+.dark .text-rose-700, .dark .text-rose-800 {
+  color: #f87171 !important; /* rose-400 */
+}
+.dark .bg-rose-50 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #fecaca !important;
+}
+
